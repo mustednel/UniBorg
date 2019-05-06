@@ -6,10 +6,10 @@ import logging
 import os
 import sys
 from pathlib import Path
+
+from telethon.sessions import StringSession
 from uniborg import Uniborg
 from uniborg.storage import Storage
-from telethon.sessions import StringSession
-
 
 logging.basicConfig(level=logging.INFO)
 
@@ -19,7 +19,7 @@ if ENV:
     from sample_config import Config
 else:
     if os.path.exists("config.py"):
-        from config import Development as Config
+        from sample_config import Development as Config
     else:
         logging.warning("No config.py Found!")
         logging.info("Please run the command, again, after creating config.py similar to README.md")
